@@ -18,17 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш ФИО и возраст" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqd-Iu-1nV" userLabel="Label NamesBlock">
-                                <rect key="frame" x="0.0" y="44" width="414" height="35"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="15Y-B3-UEl"/>
+                                    <constraint firstAttribute="height" constant="40" id="15Y-B3-UEl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-Fx-lMp" userLabel="StackView Names">
-                                <rect key="frame" x="20" y="94" width="374" height="186.5"/>
+                                <rect key="frame" x="20" y="99" width="374" height="186.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U1A-gQ-OBa" userLabel="TField LastName">
                                         <rect key="frame" x="0.0" y="0.0" width="249.5" height="34"/>
@@ -72,17 +72,17 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация о детях" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAR-kT-wFQ" userLabel="Label ChildrensBlock">
-                                <rect key="frame" x="0.0" y="295.5" width="414" height="35"/>
+                                <rect key="frame" x="0.0" y="300.5" width="414" height="40"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="5ex-M9-X35"/>
+                                    <constraint firstAttribute="height" constant="40" id="5ex-M9-X35"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-tD-b2n" userLabel="TableView Childrens">
-                                <rect key="frame" x="20" y="345.5" width="374" height="516.5"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-tD-b2n" userLabel="TableView Childrens">
+                                <rect key="frame" x="20" y="355.5" width="374" height="506.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellChild" rowHeight="99" id="bxl-iX-Z9x" userLabel="Cell Child" customClass="CellChild" customModule="Alef" customModuleProvider="target">
@@ -93,9 +93,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-eg-FyG" userLabel="Button DelChild">
-                                                    <rect key="frame" x="350.5" y="0.0" width="23.5" height="99"/>
+                                                    <rect key="frame" x="355" y="0.0" width="19" height="99"/>
                                                     <state key="normal">
-                                                        <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                                        <imageReference key="image" image="trash" catalog="system" symbolScale="medium"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
                                                     </state>
                                                     <connections>
@@ -142,7 +142,11 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-03-ODS" userLabel="ButtonAddChild">
-                                <rect key="frame" x="369.5" y="295.5" width="24.5" height="35"/>
+                                <rect key="frame" x="349" y="298" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="TO7-F4-ZTu"/>
+                                    <constraint firstAttribute="width" constant="45" id="mfE-zX-cLL"/>
+                                </constraints>
                                 <state key="normal">
                                     <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="light"/>
@@ -156,7 +160,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nUZ-tD-b2n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0aV-GK-Byc"/>
-                            <constraint firstItem="U4A-03-ODS" firstAttribute="height" secondItem="tAR-kT-wFQ" secondAttribute="height" id="2T1-jP-CgP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nUZ-tD-b2n" secondAttribute="bottom" id="3f6-Ch-UZN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nUZ-tD-b2n" secondAttribute="trailing" constant="20" id="5cR-vL-KBX"/>
                             <constraint firstItem="Eqd-Iu-1nV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bb7-AL-Vr2"/>
@@ -164,7 +167,7 @@
                             <constraint firstItem="4pf-Fx-lMp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OVk-Ln-X8k"/>
                             <constraint firstItem="tAR-kT-wFQ" firstAttribute="top" secondItem="4pf-Fx-lMp" secondAttribute="bottom" constant="15" id="Pw0-ph-PMN"/>
                             <constraint firstItem="nUZ-tD-b2n" firstAttribute="top" secondItem="tAR-kT-wFQ" secondAttribute="bottom" constant="15" id="RfU-sm-TtU"/>
-                            <constraint firstItem="U4A-03-ODS" firstAttribute="top" secondItem="4pf-Fx-lMp" secondAttribute="bottom" constant="15" id="T6q-Lq-fpc"/>
+                            <constraint firstItem="U4A-03-ODS" firstAttribute="centerY" secondItem="tAR-kT-wFQ" secondAttribute="centerY" id="WUa-sh-DUn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4pf-Fx-lMp" secondAttribute="trailing" constant="20" id="Z8g-HQ-7cl"/>
                             <constraint firstItem="4pf-Fx-lMp" firstAttribute="top" secondItem="Eqd-Iu-1nV" secondAttribute="bottom" constant="15" id="eow-uX-WbQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4A-03-ODS" secondAttribute="trailing" constant="20" id="jSl-IJ-Lbf"/>
