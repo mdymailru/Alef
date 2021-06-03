@@ -10,4 +10,5 @@ import Foundation
 enum ValidationType {
   case emptyString
   case age
+  case maxChild
 }

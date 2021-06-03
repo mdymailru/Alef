@@ -15,8 +15,8 @@ class ChildViewController: UIViewController {
   
   weak var delegate: ChildDelegate?
   
-  @IBOutlet weak var tFieldChildName: UITextField!
-  @IBOutlet weak var tFieldChildAge: UITextField!
+  @IBOutlet weak var ChildNameTF: UITextField!
+  @IBOutlet weak var ChildAgeTF: UITextField!
   
   @IBAction func touchCancelButton(_ sender: UIButton) {
     view.endEditing(true)
@@ -24,29 +24,29 @@ class ChildViewController: UIViewController {
   }
   
   @IBAction func touchSaveButton(_ sender: UIButton) {
-    guard let name = tFieldChildName.text,
-          let ageStr = tFieldChildAge.text,
+    guard let name = ChildNameTF.text,
+          let ageStr = ChildAgeTF.text,
           let age = Int(ageStr)
     else { print("Input Data no correct"); return }
     
     let child = Child(name: name, age: age)
     if let row = editModeRow {
-      delegate?.editChild(row: row, child: child)
+      delegate?.editChild(row: row, child: child) //edit
     } else  {
-      delegate?.addChild(child: child)
+      delegate?.addChild(child: child)            //new
     }
   }
   
   override func viewDidLoad() {
-    tFieldChildName.text = name
-    tFieldChildAge.text = ageStr
-    tFieldChildName.becomeFirstResponder()
+    ChildNameTF.text = name
+    ChildAgeTF.text = ageStr
+    ChildNameTF.becomeFirstResponder()
   }
 }
 
 extension ChildViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    tFieldChildName.resignFirstResponder()
+    ChildNameTF.resignFirstResponder()
     return true
   }
   

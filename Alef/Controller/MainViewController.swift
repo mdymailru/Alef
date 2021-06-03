@@ -11,10 +11,12 @@ class MainViewController: UIViewController {
 
   var model: Model!
   var isVisibleAddChildButton: Bool! {
-    didSet { addChildButton.isHidden = !isVisibleAddChildButton }
+    didSet { addChildButton.isHidden = !isVisibleAddChildButton
+      infoWarningLabel.text = model.validData(type: .maxChild).error
+    }
   }
   
-  @IBOutlet weak var infoWarning: UILabel!
+  @IBOutlet weak var infoWarningLabel: UILabel!
   @IBOutlet weak var lastNameTF: UITextField!
   @IBOutlet weak var firstNameTF: UITextField!
   @IBOutlet weak var middleNameTF: UITextField!
@@ -44,7 +46,7 @@ class MainViewController: UIViewController {
   
   func initMainVC() {
     model = Model()
-    isVisibleAddChildButton = model.isChildAdd
+    isVisibleAddChildButton = model.validData(type: .maxChild).result 
   }
   
   @objc
@@ -59,7 +61,7 @@ class MainViewController: UIViewController {
       default: return
     }
     let valid = model.validData(data: data, type: type)
-    infoWarning.text = valid.1
+    infoWarningLabel.text = valid.error
   }
 }
 
@@ -91,14 +93,14 @@ extension MainViewController: UITableViewDataSource {
 //MARK: ChildDelegate
 extension MainViewController: ChildDelegate {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //if segue.identifier == "toChildVCfromAdd"  {
+    
     view.endEditing(true)
     
     let childVC = segue.destination as! ChildViewController
     childVC.delegate = self
-    childVC.editModeRow = nil
-    //}
-    if let cell = sender as? CellChild {
+    childVC.editModeRow = nil            //new Child
+    
+    if let cell = sender as? CellChild { //editing Child
       let index = cell.contentView.tag
       childVC.name = (model.children[index].name) ?? ""
       guard let age = model.children[index].age else { return }
