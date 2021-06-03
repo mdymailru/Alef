@@ -10,4 +10,5 @@ import Foundation
 protocol ChildDelegate: AnyObject {
   func addChild(child: Child)
   func editChild(row index: Int, child: Child)
+  func proxyValidate(data: String, type: ValidationType) -> (result: Bool, error: String)
 }

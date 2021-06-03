@@ -200,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="3bl-uJ-Wyd" userLabel="StackViewChildName">
-                                <rect key="frame" x="20" y="80" width="374" height="89"/>
+                                <rect key="frame" x="20" y="80" width="374" height="124.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя ребенка" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-lT-fD6" userLabel="TEditChildName">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -215,6 +215,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVM-RT-aXP" userLabel="Label InfoWarning">
+                                        <rect key="frame" x="0.0" y="110" width="374" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сведения о ребенке" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-e1-cUK" userLabel="LabelNamesChildBlock">
@@ -264,8 +270,10 @@
                     <navigationItem key="navigationItem" id="ZMv-4q-JE1"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="ChildAgeTF" destination="wVO-sa-Diy" id="ATn-R5-hFv"/>
-                        <outlet property="ChildNameTF" destination="xNx-lT-fD6" id="stY-1W-8cr"/>
+                        <outlet property="childAgeTF" destination="wVO-sa-Diy" id="oLi-ev-m1Q"/>
+                        <outlet property="childNameTF" destination="xNx-lT-fD6" id="P3R-vw-6xM"/>
+                        <outlet property="infoWarningLabel" destination="dVM-RT-aXP" id="ytX-O8-wAh"/>
+                        <outlet property="saveButton" destination="wSx-RG-kpM" id="7vZ-wq-rYO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxY-jt-4Q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -124,5 +124,9 @@ extension MainViewController: ChildDelegate {
     model.editChild(at: index, child: child)
     tableViewChild.reloadData()
   }
+  
+  func proxyValidate(data: String, type: ValidationType) -> (result: Bool, error: String) {
+    return model.validData(data: data, type: type)
+  }
 }
 
