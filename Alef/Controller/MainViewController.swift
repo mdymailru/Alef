@@ -25,9 +25,19 @@ class MainViewController: UIViewController {
   @IBOutlet weak var addChildButton: UIButton!
     
   @IBAction func touchDelChildButton(_ sender: UIButton) {
+    
     guard let row = sender.superview?.tag else { return }
-    isVisibleAddChildButton = model.delChild(at: row)
-    tableViewChild.reloadData()
+    let alert = UIAlertController(title: "Удалить \(row + 1):\(model.children[row].name ?? "") ?",
+                                message: "",
+                         preferredStyle: .actionSheet)
+    let actionCancel = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+    let actionDelete = UIAlertAction(title: "Удалить",
+                                     style: .destructive,
+        handler: { [weak self] _ in self?.isVisibleAddChildButton = self?.model.delChild(at: row)
+                                    self?.tableViewChild.reloadData() })
+    alert.addAction(actionCancel)
+    alert.addAction(actionDelete)
+    present(alert, animated: true, completion: nil)
   }
       
   override func viewDidLoad() {
@@ -83,10 +93,6 @@ extension MainViewController: UITableViewDataSource {
             
     return cell
   }
-  
-//  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//      return 80
-//  } //my fail
   
 }
 

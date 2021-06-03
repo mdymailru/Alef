@@ -142,7 +142,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-03-ODS" userLabel="ButtonAddChild">
-                                <rect key="frame" x="349" y="298" width="45" height="45"/>
+                                <rect key="frame" x="363" y="298" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="TO7-F4-ZTu"/>
                                     <constraint firstAttribute="width" constant="45" id="mfE-zX-cLL"/>
@@ -170,7 +170,7 @@
                             <constraint firstItem="U4A-03-ODS" firstAttribute="centerY" secondItem="tAR-kT-wFQ" secondAttribute="centerY" id="WUa-sh-DUn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4pf-Fx-lMp" secondAttribute="trailing" constant="20" id="Z8g-HQ-7cl"/>
                             <constraint firstItem="4pf-Fx-lMp" firstAttribute="top" secondItem="Eqd-Iu-1nV" secondAttribute="bottom" constant="15" id="eow-uX-WbQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4A-03-ODS" secondAttribute="trailing" constant="20" id="jSl-IJ-Lbf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4A-03-ODS" secondAttribute="trailing" constant="6" id="jSl-IJ-Lbf"/>
                             <constraint firstItem="tAR-kT-wFQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oQf-OH-VjD"/>
                             <constraint firstAttribute="trailing" secondItem="tAR-kT-wFQ" secondAttribute="trailing" id="vby-XV-7F3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eqd-Iu-1nV" secondAttribute="trailing" id="vzH-OT-UhX"/>
