@@ -81,19 +81,19 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-tD-b2n" userLabel="TableView Childrens">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-tD-b2n" userLabel="TableView Childrens">
                                 <rect key="frame" x="20" y="345.5" width="374" height="516.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellChild" rowHeight="60" id="bxl-iX-Z9x" userLabel="Cell Child" customClass="CellChild" customModule="Alef" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellChild" rowHeight="99" id="bxl-iX-Z9x" userLabel="Cell Child" customClass="CellChild" customModule="Alef" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxl-iX-Z9x" id="8ih-3I-xmz">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-eg-FyG" userLabel="Button DelChild">
-                                                    <rect key="frame" x="350.5" y="0.0" width="23.5" height="60"/>
+                                                    <rect key="frame" x="350.5" y="0.0" width="23.5" height="99"/>
                                                     <state key="normal">
                                                         <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
@@ -102,18 +102,18 @@
                                                         <action selector="touchDelChildButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9e-Xk-P64"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iv-6c-Hlx" userLabel="Label NumberChild">
-                                                    <rect key="frame" x="20" y="10" width="10.5" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iv-6c-Hlx" userLabel="Label NumberChild">
+                                                    <rect key="frame" x="20" y="29.5" width="11" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Ygz-Wl-hXv"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сведения о ребенке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ9-KB-lIj" userLabel="Label ShortChildInfo">
-                                                    <rect key="frame" x="40.5" y="21.5" width="138" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сведения о ребенке" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ9-KB-lIj" userLabel="Label ShortChildInfo">
+                                                    <rect key="frame" x="41" y="40.5" width="293" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -126,6 +126,7 @@
                                                 <constraint firstItem="1bJ-eg-FyG" firstAttribute="top" secondItem="8ih-3I-xmz" secondAttribute="top" id="TdE-By-Ymx"/>
                                                 <constraint firstItem="7iv-6c-Hlx" firstAttribute="leading" secondItem="8ih-3I-xmz" secondAttribute="leadingMargin" id="XwW-WG-C0c"/>
                                                 <constraint firstAttribute="bottom" secondItem="1bJ-eg-FyG" secondAttribute="bottom" id="ckP-K8-NeL"/>
+                                                <constraint firstAttribute="trailing" secondItem="sZ9-KB-lIj" secondAttribute="trailing" constant="40" id="qAI-CV-0Mx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
