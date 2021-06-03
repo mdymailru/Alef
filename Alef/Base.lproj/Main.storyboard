@@ -1,24 +1,288 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Alef" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваш ФИО и возраст" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqd-Iu-1nV" userLabel="Label NamesBlock">
+                                <rect key="frame" x="0.0" y="44" width="414" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="15Y-B3-UEl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="4pf-Fx-lMp" userLabel="StackView Names">
+                                <rect key="frame" x="20" y="94" width="374" height="186.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U1A-gQ-OBa" userLabel="TField LastName">
+                                        <rect key="frame" x="0.0" y="0.0" width="249.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="SaY-u0-n0g"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zvd-J4-70Z" userLabel="TField FirstName">
+                                        <rect key="frame" x="0.0" y="43" width="249.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Отчество" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qlo-02-Dim" userLabel="TField MiddleName">
+                                        <rect key="frame" x="0.0" y="86" width="249.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Возраст" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CeS-F4-01m" userLabel="TField Age">
+                                        <rect key="frame" x="0.0" y="129" width="124.5" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sH-vl-Rfz" userLabel="Label InfoWarning">
+                                        <rect key="frame" x="0.0" y="172" width="13.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CeS-F4-01m" firstAttribute="width" secondItem="Qlo-02-Dim" secondAttribute="width" multiplier="1:2" id="49d-ZG-jHT"/>
+                                    <constraint firstItem="Qlo-02-Dim" firstAttribute="width" secondItem="zvd-J4-70Z" secondAttribute="width" id="NWD-PM-fGk"/>
+                                    <constraint firstItem="zvd-J4-70Z" firstAttribute="leading" secondItem="4pf-Fx-lMp" secondAttribute="leading" id="OBe-lJ-jn9"/>
+                                    <constraint firstItem="U1A-gQ-OBa" firstAttribute="width" secondItem="4pf-Fx-lMp" secondAttribute="width" multiplier="2:3" id="QZm-Vp-XXI"/>
+                                    <constraint firstItem="zvd-J4-70Z" firstAttribute="width" secondItem="U1A-gQ-OBa" secondAttribute="width" id="bAK-Lh-9Pg"/>
+                                    <constraint firstItem="CeS-F4-01m" firstAttribute="leading" secondItem="4pf-Fx-lMp" secondAttribute="leading" id="hqN-6O-okM"/>
+                                    <constraint firstItem="U1A-gQ-OBa" firstAttribute="leading" secondItem="4pf-Fx-lMp" secondAttribute="leading" id="k2Y-LG-i7W"/>
+                                    <constraint firstItem="Qlo-02-Dim" firstAttribute="leading" secondItem="4pf-Fx-lMp" secondAttribute="leading" id="kjL-W4-g4L"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Информация о детях" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAR-kT-wFQ" userLabel="Label ChildrensBlock">
+                                <rect key="frame" x="0.0" y="295.5" width="414" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5ex-M9-X35"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nUZ-tD-b2n" userLabel="TableView Childrens">
+                                <rect key="frame" x="20" y="345.5" width="374" height="516.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CellChild" rowHeight="60" id="bxl-iX-Z9x" userLabel="Cell Child" customClass="CellChild" customModule="Alef" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="374" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxl-iX-Z9x" id="8ih-3I-xmz">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bJ-eg-FyG" userLabel="Button DelChild">
+                                                    <rect key="frame" x="350.5" y="0.0" width="23.5" height="60"/>
+                                                    <state key="normal">
+                                                        <imageReference key="image" image="trash" catalog="system" symbolScale="large"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="light"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="touchDelChildButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f9e-Xk-P64"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iv-6c-Hlx" userLabel="Label NumberChild">
+                                                    <rect key="frame" x="20" y="10" width="10.5" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="Ygz-Wl-hXv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сведения о ребенке" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZ9-KB-lIj" userLabel="Label ShortChildInfo">
+                                                    <rect key="frame" x="40.5" y="21.5" width="138" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sZ9-KB-lIj" firstAttribute="leading" secondItem="7iv-6c-Hlx" secondAttribute="trailing" constant="10" id="7nE-08-OIN"/>
+                                                <constraint firstItem="7iv-6c-Hlx" firstAttribute="centerY" secondItem="8ih-3I-xmz" secondAttribute="centerY" id="93o-cO-7ZU"/>
+                                                <constraint firstAttribute="trailing" secondItem="1bJ-eg-FyG" secondAttribute="trailing" id="BLY-m8-5lk"/>
+                                                <constraint firstItem="sZ9-KB-lIj" firstAttribute="centerY" secondItem="8ih-3I-xmz" secondAttribute="centerY" id="Kqq-Le-ZX4"/>
+                                                <constraint firstItem="1bJ-eg-FyG" firstAttribute="top" secondItem="8ih-3I-xmz" secondAttribute="top" id="TdE-By-Ymx"/>
+                                                <constraint firstItem="7iv-6c-Hlx" firstAttribute="leading" secondItem="8ih-3I-xmz" secondAttribute="leadingMargin" id="XwW-WG-C0c"/>
+                                                <constraint firstAttribute="bottom" secondItem="1bJ-eg-FyG" secondAttribute="bottom" id="ckP-K8-NeL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="numberChildCellLabel" destination="7iv-6c-Hlx" id="ffQ-Md-O3F"/>
+                                            <outlet property="shortChildInfoCellLabel" destination="sZ9-KB-lIj" id="zIy-66-taJ"/>
+                                            <segue destination="BaR-Jg-Cru" kind="presentation" identifier="toChildVCfromCell" id="khv-My-Uiy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zNa-EB-KWl"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SX1-K4-8Sd"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4A-03-ODS" userLabel="ButtonAddChild">
+                                <rect key="frame" x="369.5" y="295.5" width="24.5" height="35"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus.circle" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="light"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BaR-Jg-Cru" kind="presentation" identifier="toChildVCfromAdd" id="aFh-nj-Zjn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nUZ-tD-b2n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0aV-GK-Byc"/>
+                            <constraint firstItem="U4A-03-ODS" firstAttribute="height" secondItem="tAR-kT-wFQ" secondAttribute="height" id="2T1-jP-CgP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nUZ-tD-b2n" secondAttribute="bottom" id="3f6-Ch-UZN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nUZ-tD-b2n" secondAttribute="trailing" constant="20" id="5cR-vL-KBX"/>
+                            <constraint firstItem="Eqd-Iu-1nV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bb7-AL-Vr2"/>
+                            <constraint firstItem="Eqd-Iu-1nV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MAd-oy-SA2"/>
+                            <constraint firstItem="4pf-Fx-lMp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OVk-Ln-X8k"/>
+                            <constraint firstItem="tAR-kT-wFQ" firstAttribute="top" secondItem="4pf-Fx-lMp" secondAttribute="bottom" constant="15" id="Pw0-ph-PMN"/>
+                            <constraint firstItem="nUZ-tD-b2n" firstAttribute="top" secondItem="tAR-kT-wFQ" secondAttribute="bottom" constant="15" id="RfU-sm-TtU"/>
+                            <constraint firstItem="U4A-03-ODS" firstAttribute="top" secondItem="4pf-Fx-lMp" secondAttribute="bottom" constant="15" id="T6q-Lq-fpc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4pf-Fx-lMp" secondAttribute="trailing" constant="20" id="Z8g-HQ-7cl"/>
+                            <constraint firstItem="4pf-Fx-lMp" firstAttribute="top" secondItem="Eqd-Iu-1nV" secondAttribute="bottom" constant="15" id="eow-uX-WbQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U4A-03-ODS" secondAttribute="trailing" constant="20" id="jSl-IJ-Lbf"/>
+                            <constraint firstItem="tAR-kT-wFQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oQf-OH-VjD"/>
+                            <constraint firstAttribute="trailing" secondItem="tAR-kT-wFQ" secondAttribute="trailing" id="vby-XV-7F3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Eqd-Iu-1nV" secondAttribute="trailing" id="vzH-OT-UhX"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x1P-as-9Q1"/>
+                    <connections>
+                        <outlet property="addChildButton" destination="U4A-03-ODS" id="jEm-Uh-KEe"/>
+                        <outlet property="ageTF" destination="CeS-F4-01m" id="P8D-WW-IPL"/>
+                        <outlet property="firstNameTF" destination="zvd-J4-70Z" id="ThZ-gU-pdB"/>
+                        <outlet property="infoWarning" destination="4sH-vl-Rfz" id="dz3-8i-7BR"/>
+                        <outlet property="lastNameTF" destination="U1A-gQ-OBa" id="wsr-UG-9wh"/>
+                        <outlet property="middleNameTF" destination="Qlo-02-Dim" id="dRg-bv-ibL"/>
+                        <outlet property="tableViewChild" destination="nUZ-tD-b2n" id="TtL-aA-yUm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--ChildViewController-->
+        <scene sceneID="g9K-9J-VGj">
+            <objects>
+                <viewController storyboardIdentifier="ChildViewController" id="BaR-Jg-Cru" userLabel="ChildViewController" customClass="ChildViewController" customModule="Alef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbh-ov-rmc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="3bl-uJ-Wyd" userLabel="StackViewChildName">
+                                <rect key="frame" x="20" y="80" width="374" height="89"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя ребенка" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-lT-fD6" userLabel="TEditChildName">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BaR-Jg-Cru" id="IVx-DJ-Yio"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Возраст ребенка" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wVO-sa-Diy" userLabel="TEditChildAge">
+                                        <rect key="frame" x="0.0" y="55" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сведения о ребенке" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbZ-e1-cUK" userLabel="LabelNamesChildBlock">
+                                <rect key="frame" x="0.0" y="15" width="414" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="xP1-hG-DGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0l-GO-YWD" userLabel="Button Cancel">
+                                <rect key="frame" x="20" y="15" width="56" height="35"/>
+                                <state key="normal" title="Отмена"/>
+                                <connections>
+                                    <action selector="touchCancelButton:" destination="BaR-Jg-Cru" eventType="touchUpInside" id="XQQ-o1-Ezz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSx-RG-kpM" userLabel="Button Save">
+                                <rect key="frame" x="317" y="15" width="77" height="35"/>
+                                <state key="normal" title="Сохранить"/>
+                                <connections>
+                                    <action selector="touchCancelButton:" destination="BaR-Jg-Cru" eventType="touchUpInside" id="aOC-bo-Tv8"/>
+                                    <action selector="touchSaveButton:" destination="BaR-Jg-Cru" eventType="touchUpInside" id="X32-9h-5Fu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="exK-rQ-z8p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tbZ-e1-cUK" firstAttribute="top" secondItem="exK-rQ-z8p" secondAttribute="top" constant="15" id="3mw-57-H0a"/>
+                            <constraint firstItem="3bl-uJ-Wyd" firstAttribute="leading" secondItem="exK-rQ-z8p" secondAttribute="leading" constant="20" id="4m8-H8-WiS"/>
+                            <constraint firstItem="tbZ-e1-cUK" firstAttribute="trailing" secondItem="exK-rQ-z8p" secondAttribute="trailing" id="BbI-w5-koI"/>
+                            <constraint firstItem="3bl-uJ-Wyd" firstAttribute="top" secondItem="tbZ-e1-cUK" secondAttribute="bottom" constant="30" id="Jj7-b0-bmY"/>
+                            <constraint firstItem="wSx-RG-kpM" firstAttribute="top" secondItem="tbZ-e1-cUK" secondAttribute="top" id="MTr-yl-xWg"/>
+                            <constraint firstItem="wSx-RG-kpM" firstAttribute="bottom" secondItem="tbZ-e1-cUK" secondAttribute="bottom" id="SKJ-y2-axj"/>
+                            <constraint firstItem="exK-rQ-z8p" firstAttribute="trailing" secondItem="wSx-RG-kpM" secondAttribute="trailing" constant="20" id="TlU-Pt-S0c"/>
+                            <constraint firstItem="L0l-GO-YWD" firstAttribute="top" secondItem="tbZ-e1-cUK" secondAttribute="top" id="Uco-jc-BOb"/>
+                            <constraint firstItem="exK-rQ-z8p" firstAttribute="trailing" secondItem="3bl-uJ-Wyd" secondAttribute="trailing" constant="20" id="cR5-aZ-DRv"/>
+                            <constraint firstItem="wSx-RG-kpM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="L0l-GO-YWD" secondAttribute="trailing" constant="8" symbolic="YES" id="i9t-BW-qkM"/>
+                            <constraint firstItem="tbZ-e1-cUK" firstAttribute="bottom" secondItem="L0l-GO-YWD" secondAttribute="bottom" id="rZA-wv-o28"/>
+                            <constraint firstItem="L0l-GO-YWD" firstAttribute="leading" secondItem="exK-rQ-z8p" secondAttribute="leading" constant="20" id="s4o-52-mtI"/>
+                            <constraint firstItem="tbZ-e1-cUK" firstAttribute="leading" secondItem="exK-rQ-z8p" secondAttribute="leading" id="wew-ff-GEt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZMv-4q-JE1"/>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="tFieldChildAge" destination="wVO-sa-Diy" id="ATn-R5-hFv"/>
+                        <outlet property="tFieldChildName" destination="xNx-lT-fD6" id="stY-1W-8cr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uxY-jt-4Q7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="138"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="aFh-nj-Zjn"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
